@@ -1,0 +1,64 @@
+# The R package 'collections' does offer nice container types, but can seem fairly sticky to use for R users
+# Documentation can be found here https://www.rdocumentation.org/packages/collections/versions/0.1.4
+
+# Creating a pseudo-dictionary in is a useful tool if you want to reference the list entries by name rather than an
+# arbitrary indexing.
+
+# Ex. Lets say the entries to a pseudo_dict are 'A', 'B', and 'C' with entries of '1', '2', and '3'. To get
+# the corresponding value for 'A', simply call pseudo_dict['A'] to get a return of '1'!
+
+# The idea of this function is to create a pseudo_dict in R,
+# similar to the functionality of a Python dict. In R, this relies on
+# the list() object.
+
+# Feel free to change around the names of the inputs/name of the function once
+# you copy into R!
+
+
+# Assumes both keys and values are vectors (and are of equal length)
+
+# Default filling is integers
+
+# Keys and values must line up
+
+# You can order your pseudo_dict the keys by using the order() and names() functions
+
+# Ex. dict[order(names(dict))] will return a now ordered dictionary
+
+
+
+
+# FUNCTION
+
+pseudo_dict <- function(keys, values){
+  if(missing(values)){
+        
+        i <- 1
+        
+        LIST <- list()
+        
+        while(i <= length(keys)) {
+            LIST[i] <- i
+            i <- i + 1
+        }
+        
+        names(LIST) <- keys
+        
+        return(LIST)
+        
+  } else{
+    
+        i <- 1
+        
+        LIST <- list()
+        
+        while(i <= length(keys)) {
+            LIST[i] <- values[i]
+            i <- i + 1
+        }
+        
+        names(LIST) <- keys
+        
+        return(LIST)    
+    
+  }

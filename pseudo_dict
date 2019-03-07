@@ -21,6 +21,9 @@
 
 # Keys and values must line up
 
+# To check if a term is in the pseudo_dict, simply call 'term' %in% names(pseudo_dict)
+#       -> Will return a logical value
+
 # You can order your pseudo_dict the keys by using the order() and names() functions
 
 # Ex. dict[order(names(dict))] will return a now ordered dictionary
